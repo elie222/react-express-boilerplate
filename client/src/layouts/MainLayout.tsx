@@ -91,7 +91,7 @@ class MainLayout extends Component {
                 minHeight: 280,
               }}
             >
-              Content
+              {this.props.children}
             </Content>
           </Layout>
         </Layout>
