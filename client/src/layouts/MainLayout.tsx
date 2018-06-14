@@ -1,12 +1,15 @@
 import React, { Component } from 'react'
-import { Layout, Menu, Breadcrumb, Icon } from 'antd';
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Layout, Menu, Breadcrumb, Icon } from 'antd'
+import Home from '../routes/Home';
+import WrappedRegistrationForm from '../routes/Registration';
+const { SubMenu } = Menu
+const { Header, Content, Sider } = Layout
 
 // .logo {
 //   width: 120px;
 //   height: 31px;
-//   background: rgba(255,255,255,.2);  
+//   background: rgba(255,255,255,.2);
 //   margin: 16px 28px 16px 0;
 //   float: left;
 // }
@@ -91,7 +94,27 @@ class MainLayout extends Component {
                 minHeight: 280,
               }}
             >
-              {this.props.children}
+              <Router>
+                <div>
+                  <ul>
+                    <li>
+                      <Link to="/">Home</Link>
+                    </li>
+                    <li>
+                      <Link to="/about">About</Link>
+                    </li>
+                    <li>
+                      <Link to="/topics">Topics</Link>
+                    </li>
+                  </ul>
+
+                  <hr />
+
+                  <Route exact path="/" component={Home} />
+                  <Route path="/about" component={WrappedRegistrationForm} />
+                  <Route path="/topics" component={Home} />
+                </div>
+              </Router>
             </Content>
           </Layout>
         </Layout>
