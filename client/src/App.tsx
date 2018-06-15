@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 import { ApolloProvider } from 'react-apollo'
 import { ThemeProvider } from 'styled-components'
 import MainLayout from './layouts/MainLayout'
@@ -9,11 +10,13 @@ import './App.scss'
 class App extends React.Component {
   render() {
     return (
-      <ApolloProvider client={client}>
-        <ThemeProvider theme={theme}>
-          <MainLayout />
-        </ThemeProvider>
-      </ApolloProvider>
+      <Router>
+        <ApolloProvider client={client}>
+          <ThemeProvider theme={theme}>
+            <MainLayout />
+          </ThemeProvider>
+        </ApolloProvider>
+      </Router>
     )
   }
 }

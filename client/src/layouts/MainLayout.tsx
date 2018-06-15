@@ -1,11 +1,13 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { Route, Link } from 'react-router-dom'
 import { Layout, Breadcrumb } from 'antd'
-import Home from '../routes/Home';
-import WrappedRegistrationForm from '../routes/Registration';
-import NavBar from '../components/NavBar';
-import SideBar from '../components/SideBar';
-import Books from '../routes/Books';
+import Home from '../routes/Home'
+import WrappedRegistrationForm from '../routes/Registration'
+import NavBar from '../components/NavBar'
+import SideBar from '../components/SideBar'
+import Books from '../routes/Books'
+import LogIn from '../routes/LogIn'
+import SignUp from '../routes/SignUp'
 const { Content } = Layout
 
 class MainLayout extends Component {
@@ -29,27 +31,27 @@ class MainLayout extends Component {
                 minHeight: 280,
               }}
             >
-              <Router>
-                <div>
-                  <ul>
-                    <li>
-                      <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                      <Link to="/about">About</Link>
-                    </li>
-                    <li>
-                      <Link to="/books">Books</Link>
-                    </li>
-                  </ul>
+              <div>
+                <ul>
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/about">About</Link>
+                  </li>
+                  <li>
+                    <Link to="/books">Books</Link>
+                  </li>
+                </ul>
 
-                  <hr />
+                <hr />
 
-                  <Route exact path="/" component={Home} />
-                  <Route path="/about" component={WrappedRegistrationForm} />
-                  <Route path="/books" component={Books} />
-                </div>
-              </Router>
+                <Route exact path="/" component={Home} />
+                <Route path="/about" component={WrappedRegistrationForm} />
+                <Route path="/books" component={Books} />
+                <Route path="/sign-up" component={SignUp} />
+                <Route path="/log-in" component={LogIn} />
+              </div>
             </Content>
           </Layout>
         </Layout>
