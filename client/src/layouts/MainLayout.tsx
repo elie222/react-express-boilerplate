@@ -5,6 +5,7 @@ import Home from '../routes/Home';
 import WrappedRegistrationForm from '../routes/Registration';
 import NavBar from '../components/NavBar';
 import SideBar from '../components/SideBar';
+import Books from '../routes/Books';
 const { Content } = Layout
 
 class MainLayout extends Component {
@@ -38,7 +39,7 @@ class MainLayout extends Component {
                       <Link to="/about">About</Link>
                     </li>
                     <li>
-                      <Link to="/topics">Topics</Link>
+                      <Link to="/books">Books</Link>
                     </li>
                   </ul>
 
@@ -46,7 +47,7 @@ class MainLayout extends Component {
 
                   <Route exact path="/" component={Home} />
                   <Route path="/about" component={WrappedRegistrationForm} />
-                  <Route path="/topics" component={Home} />
+                  <Route path="/books" component={Books} />
                 </div>
               </Router>
             </Content>
