@@ -11,6 +11,7 @@
     "no-console": false,
     "jsx-boolean-value": false,
     "interface-name": false,
-    "curly": false
+    "curly": false,
+    "no-empty-interface": false
   }
 }

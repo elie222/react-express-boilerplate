@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { Query } from 'react-apollo'
 import gql from 'graphql-tag'
+import BooksTable from './BooksTable'
 
 export interface BooksContainerProps {}
 
@@ -13,9 +14,9 @@ export default class BooksContainer extends React.Component<
       <Query
         query={gql`
           {
-            rates(currency: "USD") {
-              currency
-              rate
+            books {
+              title
+              author
             }
           }
         `}
@@ -24,13 +25,7 @@ export default class BooksContainer extends React.Component<
           if (loading) return <p>Loading...</p>
           if (error) return <p>Error :(</p>
 
-          return data.rates.map(
-            ({ currency, rate }: { currency: any; rate: any }) => (
-              <div key={currency}>
-                <p>{`${currency}: ${rate}`}</p>
-              </div>
-            )
-          )
+          return <BooksTable books={data.books} />
         }}
       </Query>
     )
