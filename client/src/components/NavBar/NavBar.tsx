@@ -1,14 +1,23 @@
 import * as React from 'react'
 import { Layout, Menu } from 'antd'
+import styled from 'styled-components'
 const { Header } = Layout
 
 export interface INavBarProps {}
+
+const Logo = styled.div`
+  width: 120px;
+  height: 31px;
+  background: rgba(255,255,255,.2);
+  margin: 16px 28px 16px 0;
+  float: left;
+`
 
 export default class NavBar extends React.Component<INavBarProps, any> {
   render() {
     return (
       <Header className="header">
-        <div className="logo" />
+        <Logo />
         <Menu
           theme="dark"
           mode="horizontal"
