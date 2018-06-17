@@ -33,7 +33,7 @@ const schema = makeExecutableSchema({
   resolvers
 });
 
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 // Initialize the app
 const app = express();
